@@ -7,7 +7,7 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
     @Test
-    public void firstLogin() {
+    public void correctLogin() {
         browser.findElement(By.id("user-name")).sendKeys("standard_user");
         browser.findElement(By.id("user-name")).sendKeys(Keys.CONTROL + "A");
 
