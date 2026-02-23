@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <testng.version>7.11.0</testng.version>
         <selenium.version>4.39.0</selenium.version>
+        <webdrivermanager.version>6.3.3</webdrivermanager.version>
     </properties>
 
     <dependencies>
@@ -27,6 +28,12 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
         </dependency>
     </dependencies>
 
