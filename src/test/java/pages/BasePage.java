@@ -11,7 +11,6 @@ public abstract class BasePage {
     public static final String BASE_URL = "https://www.saucedemo.com/";
     private final By title = By.cssSelector(DATA_TEST_PATTERN.formatted("title"));
 
-
     WebDriver driver;
     WebDriverWait wait;
 
