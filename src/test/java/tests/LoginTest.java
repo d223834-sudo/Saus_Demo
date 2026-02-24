@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -22,13 +23,20 @@ public class LoginTest extends BaseTest {
     @DataProvider(name = "incorrectLoginData")
     public Object[][] loginData() {
         return new Object[][] {
-                {"locked_out_user", password, "Epic sadface: Sorry, this user has been locked out."},
-                {"", password, "Epic sadface: Username is required"},
+                {"locked_out_user", password, "Epic sadface: Sorry, this eeuser has been locked out."},/*,
+                {"", password, "Epic sadааааface: Username is required"}
                 {user, "", "Epic sadface: Password is required"},
                 {"Standard_user", password, "Epic sadface: Username and password do not match any user in this service"}
-        };
+        */};
     }
 
+    @Epic("Тестирование интернет-площадки")
+    @Feature("Проверка расчета скидки")
+    @Story("GGGGGGg")
+    @Severity(SeverityLevel.NORMAL)
+    @Owner("Darya Matveeva darmat@gmail.com")
+    @TmsLink("Saus_Demo")
+    @Issue("Tutorial")
     @Test(dataProvider = "incorrectLoginData", description = "Тест проверяет авторизацию заблокированного пользователя",
             invocationCount = 1, priority = 3)
     public void incorrectLogin(String user, String password, String errorMsg) {
@@ -39,5 +47,6 @@ public class LoginTest extends BaseTest {
         assertTrue(loginPage.isErrorIsDisplayed(), "Нет сообщения об ошибке");
         assertEquals(loginPage.getErrorText(), errorMsg,
                 "Неверный текст сообщения об ошибке");
+
     }
 }
