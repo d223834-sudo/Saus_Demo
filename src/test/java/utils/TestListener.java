@@ -10,7 +10,6 @@ import org.testng.ITestResult;
 
 import java.util.concurrent.TimeUnit;
 
-
 public class TestListener implements ITestListener {
 
     @Override
