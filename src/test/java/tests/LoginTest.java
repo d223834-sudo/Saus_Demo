@@ -47,6 +47,5 @@ public class LoginTest extends BaseTest {
         assertTrue(loginPage.isErrorIsDisplayed(), "Нет сообщения об ошибке");
         assertEquals(loginPage.getErrorText(), errorMsg,
                 "Неверный текст сообщения об ошибке");
-
     }
 }
