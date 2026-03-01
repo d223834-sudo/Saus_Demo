@@ -23,11 +23,11 @@ public class LoginTest extends BaseTest {
     @DataProvider(name = "incorrectLoginData")
     public Object[][] loginData() {
         return new Object[][] {
-                {"locked_out_user", password, "Epic sadface: Sorry, this eeuser has been locked out."},/*,
-                {"", password, "Epic sadааааface: Username is required"}
+                {"locked_out_user", password, "Epic sadface: Sorry, this eeuser has been locked out."},
+                {"", password, "Epic sadface: Username is required"},
                 {user, "", "Epic sadface: Password is required"},
                 {"Standard_user", password, "Epic sadface: Username and password do not match any user in this service"}
-        */};
+        };
     }
 
     @Epic("Тестирование интернет-площадки")
