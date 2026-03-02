@@ -4,6 +4,7 @@ import io.qameta.allure.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static enums.TitleNaming.PRODUCTS;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 import static user.UserFactory.withAdminPermission;
@@ -11,13 +12,13 @@ import static user.UserFactory.withAdminPermission;
 public class LoginTest extends BaseTest {
     @Test(invocationCount = 1, priority = 2, enabled = true)
     public void correctLogin() {
-        System.out.println("LoginTest.correct !!!!! in thread: " + Thread.currentThread().getId());
+        System.out.println("LoginTest.correct !!!!! in thread: " + Thread.currentThread().threadId());
 
         loginPage.open();
         loginPage.login(withAdminPermission());
 
         assertTrue(productsPage.isTitleIsDisplayed(), "Заголовок не виден");
-        assertEquals(productsPage.checkTitleName(), "Products", "Неверный заголовок");
+        assertEquals(productsPage.checkTitleName(), PRODUCTS.getDisplayName(), "Неверный заголовок");
     }
 
     @DataProvider(name = "incorrectLoginData")
